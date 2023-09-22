@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style/campagne.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://unpkg.com/css.gg@2.0.0/icons/css/home.css" rel="stylesheet">
+    <link href="https://unpkg.com/css.gg@2.0.0/icons/css/list.css" rel="stylesheet">
+    <link href="https://unpkg.com/css.gg@2.0.0/icons/css/performance.css" rel="stylesheet">
+    <link href="https://unpkg.com/css.gg@2.0.0/icons/css/user-list.css" rel="stylesheet">
+    <link href="https://unpkg.com/css.gg@2.0.0/icons/css/coffee.css" rel="stylesheet">
+    <link href="https://unpkg.com/css.gg@2.0.0/icons/css/log-off.css" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.16.9/xlsx.full.min.js"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet" />
+    <title>Campagnes</title>
+</head>
+<body>
+    <div class="sidebar">
+        <div class="sidebar-logo">
+            <img src="./assets/Lead-logo.svg" alt="Votre logo">
+            </div>
+            <div class="sidebar-icon-container">
+            <a href="dashbord">
+                <i class="gg-performance"></i>
+                <span>Dashboard</span>
+            </a>
+            <a href="Sourcing">
+                <i class="gg-list"></i>
+                <span>Sourcing</span>
+            </a>
+            <a href="leads">
+                <i class="gg-user-list"></i>
+                <span>Favoris</span>
+            </a>
+            <a href="campagne">
+                <i class="gg-coffee"></i>
+                <span>Campagnes</span>
+            </a>
+            <a href="campaign-finished">
+                <img src="./assets/mission.png" class="active-campaign">
+                <span>Campagnes Active</span>
+            </a>
+            <a href="#">
+                <img class="imageMini" src="./assets/default_avatar.png" alt="Votre photo de profil">
+                <span>Profil</span>
+            </a>
+            <a href="/Deconnexion">
+                <i class="gg-log-off"></i>
+                <span>Déconnexion</span>
+            </a>
+    
+        </div>
+        </div>
+    
+        <div class="campagne-finished-container">
+            <h1>Campagnes terminées</h1>
+            <div class="card-campaign-container">
+                
+            </div>
+            
+        
+    <main>
+        
+        
+
+    <div id="myModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Statut des prospects</h2>
+            <div class="prospect-statut-container">
+                
+            </div>
+        </div>
+    </div>
+        
+       
+
+        
+        
+    </main>
+    <script src="./js/campagne-finished.js"></script>
+</body>
+</html>

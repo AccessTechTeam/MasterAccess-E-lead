@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+              />
+        
+        <link rel="stylesheet"
+            href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+        <link rel="stylesheet" href="./style/connexion.css">
+        <title>Connexion</title>
+    </head>
+    <body>
+
+        <section class="background-radial-gradient overflow-hidden min-vh-100 ">
+            <div class="container px-4 py-5 px-md-5 text-center text-lg-start
+                my-5">
+                <div class="row gx-lg-5 align-items-center mb-5">
+                    <div class="col-lg-6 mb-5 mb-lg-0" style="z-index: 10">
+                        <h1 class="my-5 display-5 fw-bold ls-tight"
+                            style="color: hsl(218, 81%, 95%)">
+                            <span style="color: hsl(141deg 63% 22%)">ACCESS
+                            </span> <span
+                                style="color: hsl(84deg 49% 53%)"> LEAD</span><br>l'énergie
+                            qui alimente vos leads et les rend électriques<br />
+                        </h1>
+                        <p class="mb-4 opacity-70" style="color: hsl(218, 81%,
+                            85%)">
+                            Qu'attendez vous pour vous lancer ? 
+                        </p>
+                    </div>
+
+                    <div class="col-lg-6 mb-5 mb-lg-0 position-relative">
+                        <div id="radius-shape-1" class="position-absolute
+                            rounded-circle shadow-5-strong"></div>
+                        <div id="radius-shape-2" class="position-absolute
+                            shadow-5-strong"></div>
+
+                        <div class="card bg-glass">
+                            <div class="card-body px-4 py-5 px-md-5">
+                                    
+                                <div class="err">
+                                    
+                                </div>
+                                    <!-- 2 column grid layout with text inputs for the first and last names -->
+                                    <!-- Pills navs -->
+                                    <ul class="nav nav-pills nav-justified mb-3"
+                                        id="ex1" role="tablist">
+                                        <li class="nav-item"
+                                            role="presentation">
+                                            <a class="nav-link active"
+                                                id="tab-login"
+                                                data-mdb-toggle="pill"
+                                                href="connexion" role="tab"
+                                                aria-controls="pills-login"
+                                                aria-selected="true">Connexion</a>
+                                        </li>
+                                        <li class="nav-item"
+                                            role="presentation">
+                                            <a class="nav-link"
+                                                id="tab-register"
+                                                data-mdb-toggle="pill"
+                                                href="inscription"
+                                                role="tab"
+                                                aria-controls="pills-register"
+                                                aria-selected="false">Inscription</a>
+                                        </li>
+                                    </ul>
+                                    <!-- Pills navs -->
+                                    
+                                    <!-- Pills content -->
+                                    <div class="tab-content">
+                                        <div class="tab-pane fade show active"
+                                            id="pills-login" role="tabpanel"
+                                            aria-labelledby="tab-login">
+                                            <form method="POST" >
+                                                <div class="text-center mb-3">
+                                                    <p>Connectez vous avec :</p>
+                                                    <button type="button"
+                                                        class="btn btn-link
+                                                        btn-floating mx-1">
+                                                        <i class="fab
+                                                            fa-google"></i>
+                                                    </button>
+
+                                                    <button type="button"
+                                                        class="btn btn-link
+                                                        btn-floating mx-1">
+                                                        <i class="fa-brands
+                                                            fa-linkedin"></i>
+                                                    </button>
+
+                                                    <button type="button"
+                                                        class="btn btn-link
+                                                        btn-floating mx-1">
+                                                        <a href=""><img
+                                                                class="Access_icon"
+                                                                src="./assets/Access_icon.ico"
+                                                                alt="Aicon"></a>
+                                                    </button>
+                                                </div>
+
+                                                <p class="text-center">OU</p>
+                                                <!-- Email input -->
+                                                <div class="form-outline mb-4">
+                                                    <input type="email"
+                                                        id="loginName"
+                                                        class="form-control"
+                                                        placeholder="Email"
+                                                        name="email" />
+                                                    <label class="form-label"
+                                                        for="loginName">
+                                                    </label>
+                                                </div>
+
+                                                <!-- Password input -->
+                                                <div class="form-outline mb-4">
+                                                    <input type="password"
+                                                        id="loginPassword"
+                                                        class="form-control"
+                                                        placeholder="Mot de Passe"
+                                                        name="password"
+                                                        />
+                                                    <label class="form-label"
+                                                        for="loginPassword"></label>
+                                                </div>
+
+                                                <!-- 2 column grid layout -->
+                                                <div class="row mb-4">
+                                                    <div class="col-md-6 d-flex
+                                                        justify-content-center">
+                                                        <!-- Checkbox -->
+                                                        <div class="form-check
+                                                            mb-3 mb-md-0">
+                                                            <input
+                                                                class="form-check-input"
+                                                                type="checkbox"
+                                                                value=""
+                                                                id="loginCheck"
+                                                                checked />
+                                                            <label
+                                                                class="form-check-label"
+                                                                for="loginCheck">
+                                                                Se souvenir de
+                                                                moi
+                                                            </label>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="col-md-6 d-flex
+                                                        justify-content-center">
+                                                        <!-- Simple link -->
+                                                        <a href="#!">Mot de
+                                                            passe
+                                                            oublié?</a>
+                                                    </div>
+                                                </div>
+
+                                                <!-- Submit button -->
+                                                <button type="submit" class="btn
+                                                    btn-primary btn-block mb-4" id="btn_login">Se
+                                                    connecter
+                                                </button>
+
+                                                <!-- Register buttons -->
+                                                <div class="text-center">
+                                                    <p>Pas de compte ? <a
+                                                            href="#!">Inscrivez-vous</a></p>
+                                                </div>
+                                                <% if (message !== null && message !== '') { %>
+                                                    <p class="error"><%= message %></p>
+                                                  <% } %>
+                                            </form>
+                                        </div>
+                                    </div>
+                                    <!-- Pills content -->
+                                    
+                                
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </section>
+        <!-- Section: Design Block -->
+        <script src="https://kit.fontawesome.com/55721499d6.js"
+            crossorigin="anonymous"></script>
+        <script src="./js/connexion.js"></script>
+   
+    </body>
+</html>

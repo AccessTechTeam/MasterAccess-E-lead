@@ -1,0 +1,372 @@
+
+<style>
+    
+.sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    width: 60px;
+    background-color: #E0FFE0;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
+    z-index: 1;
+    transition: width 0.3s ease;
+  }
+  
+  .sidebar:hover {
+    width: 200px;
+    z-index: 1;
+  }
+  
+  .sidebar-logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 60px;
+    z-index: 1;
+  }
+  
+  .sidebar-logo img {
+    max-height: 100%;
+    max-width: 100%;
+    z-index: 1;
+    
+  }
+  
+  .sidebar-icon-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: calc(100% - 60px);
+    padding-top: 10px;
+    z-index: 1;
+  }
+  
+  .sidebar-icon-container a {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 20px;
+    color: #6f7190;
+    text-decoration: none;
+  }
+  
+  .sidebar-icon-container a:hover {
+    color: #6f7190;
+    background-color: #FFFFFFF5;
+    border-radius: 25%;
+    -webkit-border-radius: 25%;
+    -moz-border-radius: 25%;
+    -ms-border-radius: 25%;
+    -o-border-radius: 25%;
+}
+  
+  .sidebar-icon-container a i,
+  .sidebar-icon-container a img {
+    font-size: 24px;
+    margin-bottom: 5px;
+    max-height: 30px;
+    max-width: 30px;
+    
+  }
+  .sidebar-icon-container a img {
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+}
+  
+  .sidebar-icon-container a span {
+    font-size: 14px;
+    font-weight: bold;
+    text-transform: uppercase;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 0;
+    transition: max-width 0.3s ease;
+  }
+  
+  .sidebar:hover a span {
+    max-width: 120px;
+  }
+  
+  .sidebar-toggle {
+    position: absolute;
+    bottom: 20px;
+    left: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 40px;
+    background-color: #333;
+    color: #fff;
+    border-radius: 50%;
+    cursor: pointer;
+   
+  }
+  
+  .sidebar-profile {
+    position: absolute;
+    bottom: 20px;
+    left: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 40px;
+    background-color: #333;
+    border-radius: 50%;
+    overflow: hidden;
+    }
+    
+    .sidebar-profile img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    
+}
+    .filter-container{
+      display: flex;
+    }
+    .btn-recherche{
+          padding: 10px;
+          font-weight: bold;
+          color: white;          
+          border-radius: 10px;
+          margin:0px 0 0 5px;
+          border-color: transparent;
+          cursor: pointer;
+          background-color: #28918B;
+    }
+    .btn-recherche:hover {
+          box-shadow: rgba(50, 50, 93, .1) 0 0 0 1px inset, rgba(50, 50, 93, .2) 0 6px 15px 0, rgba(0, 0, 0, .1) 0 2px 2px 0, rgba(50, 151, 211, .3) 0 0 0 4px;
+        }
+
+    .modal-background{
+        display: none;
+    }
+
+    
+
+    .creation_liste{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+      h3{
+        margin: 2px;
+      }
+      button{
+        font-weight: bold;
+        color: white;
+        margin-left: 20px;
+        border-radius: 10px;
+        padding: 10px;
+        border-color: transparent;
+        cursor: pointer;
+        background-color: #28918B;
+      }
+button:hover {
+          box-shadow: rgba(50, 50, 93, .1) 0 0 0 1px inset, rgba(50, 50, 93, .2) 0 6px 15px 0, rgba(0, 0, 0, .1) 0 2px 2px 0, rgba(50, 151, 211, .3) 0 0 0 4px;
+        }
+    
+    .recherche{
+        background-color: #b5d1b7;
+        width: 80%;
+        font-size: 1.125rem;
+        padding: 0.5rem 1rem;
+        border: 0px;
+        color: rgb(20, 20, 43);
+        border-radius: 0.25rem 0.25rem 0.25rem 0.25rem;
+        border: 2px solid white;
+        
+}
+input::placeholder {
+  color: white;
+  opacity: 1;
+}
+.barre_lateral{
+
+  border: 1px solid white;
+  margin: 20px;
+  
+}
+    aside{
+        border-right: 2.5px solid #FFFFFFF5;
+        position: relative;
+        margin-left: 40px;
+        margin-right: 40px;
+        z-index: 0;
+        
+    }
+
+    .binder{
+        border-bottom: 2px solid #FFFFFFF5 ;
+    }
+
+
+      
+.recherche_input{
+        background-color: #b5d1b7;
+        width: 50%;
+        padding: 0.5rem 1rem;
+        border: 0px;
+        color: rgb(20, 20, 43);
+        border-radius: 0.25rem 0.25rem 0.25rem 0.25rem;
+        border: 2px solid white;
+}
+
+
+
+
+/* CSS */
+.button-9 {
+  appearance: button;
+  backface-visibility: hidden;
+  background-color: #28918B;
+  border-radius: 6px;
+  border-width: 0;
+  box-shadow: rgba(50, 50, 93, .1) 0 0 0 1px inset,rgba(50, 50, 93, .1) 0 2px 5px 0,rgba(0, 0, 0, .07) 0 1px 1px 0;
+  box-sizing: border-box;
+  color: #fff;
+  cursor: pointer;
+  font-family: -apple-system,system-ui,"Segoe UI",Roboto,"Helvetica Neue",Ubuntu,sans-serif;
+  font-size: 100%;
+  height: 33px;
+  line-height: 1.15;
+  margin: 12px 0 0 5px;
+  outline: none;
+  overflow: hidden;
+  padding: 0 25px;
+  position: relative;
+  text-align: center;
+  text-transform: none;
+  transform: translateZ(0);
+  transition: all .2s,box-shadow .08s ease-in;
+  user-select: none;
+  touch-action: manipulation;
+
+}
+
+.button-9:disabled {
+  cursor: default;
+}
+
+.button-9:hover {
+  box-shadow: rgba(50, 50, 93, .1) 0 0 0 1px inset, rgba(50, 50, 93, .2) 0 6px 15px 0, rgba(0, 0, 0, .1) 0 2px 2px 0, rgba(50, 151, 211, .3) 0 0 0 4px;
+}
+
+#success-alert {
+  display: none;
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: #28a745;
+  color: white;
+  padding: 10px 20px 10px 10px;
+  border-radius: 5px;
+  
+  align-items: center;
+  animation: fadeOut 3s forwards;
+}
+
+#success-alert .icon {
+  font-size: 18px;
+  margin-right: 10px;
+}
+
+@keyframes fadeOut {
+  0% {
+    opacity: 1;
+  }
+  90% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    display: none;
+  }
+}
+
+
+#error-alert {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: #dc3545;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 5px;
+  display: none;
+  align-items: center;
+  animation: fadeOut 3s forwards;
+}
+
+@keyframes fadeOut {
+  0% {
+    opacity: 1;
+  }
+  90% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    display: none;
+  }
+}
+
+
+
+#error-server {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: #dc3545;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 5px;
+  display: none;
+  align-items: center;
+  animation: fadeOut 3s forwards;
+}
+
+@keyframes fadeOut {
+  0% {
+    opacity: 1;
+  }
+  90% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    display: none;
+  }
+}
+
+
+
+</style>
+
+
+
+  <script>
+
+    /*const user  =  JSON.parse(localStorage.getItem("user"))
+    const imgMini = document.querySelector(".imageMini")
+    const imageUrlmini = `./assets/uploads/${user.username}/${user.photo}`*/
+    const imgMiniBanner = document.querySelector(".miniImageBanner")
+    fetch("/infos", { method: "GET" })
+    .then(response => response.json())
+    .then(result => {
+      imgMiniBanner.src = `../assets/uploads/${result.username}/${result.photo}`
+      imgMiniBanner.onerror =()=>{
+        imgMiniBanner.src = "../assets/Access_icon.ico"
+      }
+    })
+    .catch(err => console.log(err))
+    
+    
+  </script>

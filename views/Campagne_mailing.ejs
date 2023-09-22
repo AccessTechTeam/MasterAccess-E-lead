@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style/campagne_mailing.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <title>Campagnes</title>
+</head>
+<body>
+    
+    <nav>
+        <img class="logo" src="./assets/Lead-logo.svg" alt="logo_access">
+
+        <ul>
+            <li><a href="dashbord">
+                    <i class="fa-solid fa-chart-line"></i> 
+                        
+                </a>
+            </li>
+            <li> <a href="Sourcing"> <i class="fa-solid fa-magnifying-glass"></i></a></li>
+            <li> <a href="leads"> <i class="fa-solid fa-people-group"></i> </a></li>
+            <li> <a href="campagnes">  <i class="fa-solid fa-comments"></i> </a></li>    
+        </ul>
+
+    </nav>
+
+    <main>
+        <div class="barre_lateral">
+                
+        </div>
+        <div class="btns-mails-or-invits">
+            <button class="button-invits linkedin-color" id="button-invits">  <b>Invitations</b> </button>
+            <button class="button-mails" id="button-mails"> <b>Mailing</b> </button>
+        </div>
+        <div class="barre_lateral">
+                
+        </div>
+
+        <div class="invitation-linkedin ">
+            <div class="main_bar" id="invitation-linkedin" >
+                <div class="prev">
+                <div class="displayed_icon">
+                    <i class="fa-solid fa-arrow-left prevent"></i>
+                </div>
+                </div>
+    
+                    <div class="destinataire">
+                        <i class="fa-solid fa-users"></i>
+                        <p>Destinataire</p>
+                    </div>
+    
+                    
+                
+                    <div class="messages">
+                        <i class="fa-regular fa-envelope" ></i>
+                        <p>Messages</p>
+                    </div>
+                
+                <div class="lancement">
+                <i class="fa-solid fa-flag-checkered" disabled></i>
+                <p>Lancement</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="mailing">
+            <div class="main_bar-mailing" >
+                <div class="prev">
+                <div class="displayed_icon">
+                    <i class="fa-solid fa-arrow-left prevent"></i>
+                </div>
+                </div>
+    
+                    <div class="destinataire-mailing">
+                        <i class="fa-solid fa-users"></i>
+                        <p>Destinataire</p>
+                    </div>
+    
+                    <div class="dropcontact ">
+                        <img src="../assets/Kaspr.png" alt="logo" >
+                        <p>Kaspr</p>
+                    </div>
+                
+                    <div class="messages-mailing">
+                        <i class="fa-regular fa-paper-plane"></i>
+                        <p>Mails</p>
+                    </div>
+                
+                <div class="lancement-mailing">
+                <i class="fa-solid fa-flag-checkered" disabled></i>
+                <p>Lancement</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="barre_lateral">
+                
+        </div>
+        
+
+        <div class="lead_container">
+
+            <div class="lead_mailing">
+
+                <h3>Nom de la Campagne : <span class="nom_de_la_liste"></span> </h3>
+                
+                <h3>Nombre de leads : <span class="nombre_de_leads"></span> </h3>
+                
+                <button class="button-validate" id="linkedin-color">Valider les Destinataires</button>
+                <button class="button-enrichir hidden">Enrichir les Destinataires</button>
+            </div>
+            <div class="tableau_mailing">
+                <table>
+                    <thead>
+                    <tr>
+                        <th><input type="checkbox" id="select-all"></th>
+                        <th class="photo">Photo</th>
+                        <th class="name">Nom</th>
+                        <th class="headline">Emploie</th>
+                        <th class="company">Entreprise</th>
+                        <th class="email">E-mail</th>
+                        <th class="location">Localisation</th>
+                    </tr>
+                    </thead>
+                    <tbody id="parentProfils">
+                    
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <div class="cards">
+            
+        </div>
+        <div class="contains">
+            <div class="icon">
+                <i class="fa-solid fa-chevron-up"></i>
+            </div>
+            <div class="icon1 hidden">
+                <i class="fa-solid fa-chevron-down"></i>
+            </div>
+
+            
+
+            
+
+            <div id="email-modal" class="modal">
+            <div class="modal-content modal-closing modal-oppening">
+                
+                <h2>Approches d'invitation LinkedIn</h2>
+                <div class="card-list" id="card-list">
+                    
+                </div>
+            </div>
+            </div>
+
+
+
+            
+            
+            <div class="msg_container">
+                <div class="msg_exemple">
+                    <div class="msg_contains">
+                        <div class="msg_descrption_title">
+                        <h3>Accompagnez votre demande de connexion d’un message (recommandé)</h3>
+                        </div>
+                        
+                            <div class="area">
+                                <div class="area_msg">
+                                    
+                                    <textarea cols="170" rows="12" placeholder="Bonjour, je suis en train d'agrandir mon réseau pour trouver de nouveau professionnels, j'ai pu identifier votre profil lors de mes recherches et je vous propose d'échanger sur LinkedIn" maxlength="280"></textarea>
+                                        <div class="global_btn_var">
+                                            
+                                        </div>
+                                </div> 
+                            </div>
+                            <div class ="btns_container">
+                                <button class="button-validate" id="valider_message" role="button"><strong>Valider le message</strong> </button>
+                                <button class="button-dontSendmsg" role="button"> <strong>Ne pas ajouter de message</strong> </button>
+                                <button class="button-modifymsg" role="button"> <strong>Modifier</strong> </button>
+                            </div>
+                        
+
+                    </div>
+                </div>
+                <div class="displayed_btn">
+                    <button class="button-validate" id= "next_step" >Passez à l'étape suivante</button>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="invitationResult">
+            <div class="verdict_container">
+                <div class="verdictInvitation">
+                    
+                </div>
+            
+            </div>
+            
+        </div>
+        
+    </main>
+    <div class="container-cosmonaute">
+
+        <div class="box-of-star1">
+            <div class="star star-position1"></div>
+            <div class="star star-position2"></div>
+            <div class="star star-position3"></div>
+            <div class="star star-position4"></div>
+            <div class="star star-position5"></div>
+            <div class="star star-position6"></div>
+            <div class="star star-position7"></div>
+        </div>
+        <div class="box-of-star2">
+            <div class="star star-position1"></div>
+            <div class="star star-position2"></div>
+            <div class="star star-position3"></div>
+            <div class="star star-position4"></div>
+            <div class="star star-position5"></div>
+            <div class="star star-position6"></div>
+            <div class="star star-position7"></div>
+        </div>
+        <div class="box-of-star3">
+            <div class="star star-position1"></div>
+            <div class="star star-position2"></div>
+            <div class="star star-position3"></div>
+            <div class="star star-position4"></div>
+            <div class="star star-position5"></div>
+            <div class="star star-position6"></div>
+            <div class="star star-position7"></div>
+        </div>
+        <div class="box-of-star4">
+            <div class="star star-position1"></div>
+            <div class="star star-position2"></div>
+            <div class="star star-position3"></div>
+            <div class="star star-position4"></div>
+            <div class="star star-position5"></div>
+            <div class="star star-position6"></div>
+            <div class="star star-position7"></div>
+        </div>
+        <div data-js="astro" class="astronaut">
+            <div class="head"></div>
+            <div class="arm arm-left"></div>
+            <div class="arm arm-right"></div>
+            <div class="body">
+            <div class="panel"></div>
+            </div>
+            <div class="leg leg-left"></div>
+            <div class="leg leg-right"></div>
+            <div class="schoolbag"></div>
+        </div>
+        <div class="message-erreur-campagne">
+            <h2>Veuillez attendre que La campagne en cours sois términé pour pouvoir lancé une nouvelle !</h2>
+        </div>
+        
+        
+    </div>
+
+    <script src="./js/Campagne_mailing.js"></script>
+    
+    
+    
+</body>
+    
+</html>
+

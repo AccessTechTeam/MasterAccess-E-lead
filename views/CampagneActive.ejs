@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style/campagne.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <title>Campagnes</title>
+</head>
+<body>
+    <nav>
+        <img class="logo" src="./assets/Lead-logo.svg" alt="logo_access">
+
+        <ul>
+            <li><a href="dashbord">
+                    <i class="fa-solid fa-chart-line"></i> 
+                        
+                </a>
+            </li>
+            <li> <a href="Sourcing"> <i class="fa-solid fa-magnifying-glass"></i></a></li>
+            <li> <a href="leads"> <i class="fa-solid fa-people-group"></i> </a></li>
+            <li> <a href="campagnes">  <i class="fa-solid fa-comments"></i> </a></li>    
+        </ul>
+
+    </nav>
+
+    <main>
+        <div class="work-flow-container">
+            <div class="workflow">
+                <div class="step inactive-step">
+                  <div class="circles0 ">0</div>
+                  <div class="status0"></div>
+                </div>
+                <div class="connector1"></div>
+                <div class="step">
+                  <div class="circles1">1</div>
+                  <div class="status1"></div>
+                </div>
+                <div class="connector2"></div>
+                <div class="step">
+                  <div class="circles2">2</div>
+                  <div class="status2"></div>
+                </div>
+                <div class="connector3"></div>
+                <div class="step">
+                  <div class="circles3">3</div>
+                  <div class="status3"></div>
+                </div>
+                
+              </div>
+        </div>
+        <div class="container-all">
+            <div class="name-of-list"> </div>
+            <div class="list-of-persons">
+                <h2><div class="numberOfPersonnes" > </div></h2>
+            </div>
+            
+        </div>
+
+          <div id="myModal" class="modal">
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <div class="infos">
+                  <h2>Statut des prospects</h2>
+                  <button class="btn_stop_campagne btn-exit-process historique">Historique</button>
+
+                </div>
+                <div class="prospect-statut-container">
+                    
+                </div>
+                
+            </div>
+        </div>
+          
+        <div class="timeline-container remove">
+          <div class="timeline-modal">
+            <div class="timeline">
+        
+              <h3>Historique de campagne</h3>
+              <label>Campagne lancée le : <span class="date-lancement"></span></label>
+              
+              <div class="box">
+                
+                <div class="container">
+                  
+                  <div class="lines">
+                    
+                    
+                    
+                  </div>
+                  
+                  <div class="cards">
+                    
+                    
+                  </div>
+                  
+                  
+                  
+                </div>
+                
+                
+              
+                
+                <div class="bottom">
+                  
+                  <div class="btn" disabled>Voir plus</div>
+                  
+                </div>
+              </div>
+              
+              
+            </div>
+          </div>
+          
+        </div>
+     
+</div>
+        
+    </main>
+
+    <script src="./js/campagnes.js"></script>
+</body>
+</html>
+

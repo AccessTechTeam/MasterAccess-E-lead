@@ -1,0 +1,532 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./style/sourcing.css">
+
+  <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://unpkg.com/css.gg@2.0.0/icons/css/home.css" rel="stylesheet">
+  <link href="https://unpkg.com/css.gg@2.0.0/icons/css/list.css" rel="stylesheet">
+  <link href="https://unpkg.com/css.gg@2.0.0/icons/css/performance.css" rel="stylesheet">
+  <link href="https://unpkg.com/css.gg@2.0.0/icons/css/user-list.css" rel="stylesheet">
+  <link href="https://unpkg.com/css.gg@2.0.0/icons/css/coffee.css" rel="stylesheet">
+  <link href="https://unpkg.com/css.gg@2.0.0/icons/css/log-off.css" rel="stylesheet">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.16.9/xlsx.full.min.js"></script>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet" />
+
+  <title>Sourcing</title>
+</head>
+
+<body>
+  <div class="displayModalTop">
+    <div class="modal-top">
+      <div class="modal-header">
+
+
+
+        <div class="header-actions">
+          <button class="btn-close-top-overlay">&#x2715;</button>
+          <p><span class="selected-count">0</span> éléments selectionnés </p>
+          <button class="btn-start-campaign">Démarrer une campagne</button>
+          <button class="btn-move-to">Déplacer vers</button>
+          <button class="btn-export">Exporter</button>
+          <button class="btn-delete-all"><i class="fas fa-trash"></i> Supprimer</button>
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+
+  <div class="displayModalTopp">
+    <div class="modal-top">
+      <div class="modal-header">
+        <div class="header-actions">
+          <button class="btn-close-top-overlay">&#x2715;</button>
+          <p><span class="selected-count">0</span> <span class="separator">/</span>  <span class="selected-count">0</span> Pages</p>
+          <button class="btn-delete-all" id="abort"><i class="fas fa-trash"></i> Arreter</button>
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+
+
+  
+
+
+  <main>
+
+
+    <div class="sidebar">
+      <div class="sidebar-logo">
+        <img src="./assets/Lead-logo.svg" alt="Votre logo">
+      </div>
+      <div class="sidebar-icon-container">
+        <a href="dashbord">
+          <i class="gg-performance"></i>
+          <span>Dashboard</span>
+        </a>
+        <a href="Sourcing">
+          <i class="gg-list"></i>
+          <span>Sourcing</span>
+        </a>
+        <a href="leads">
+          <i class="gg-user-list"></i>
+          <span>Favoris</span>
+        </a>
+        <a href="campagne">
+          <i class="gg-coffee"></i>
+          <span>Campagnes Active</span>
+        </a>
+        <a href="campaign-finished">
+          <img src="./assets/mission.png" class="active-campaign">
+          <span>Campagnes</span>
+        </a>
+        <a href="#">
+          <img class="miniImageBannerForSourcing" src="./assets/default_avatar.png" alt="Votre photo de profil">
+          <span>Profil</span>
+        </a>
+        <a href="/Deconnexion">
+          <i class="gg-log-off"></i>
+          <span>Déconnexion</span>
+        </a>
+
+      </div>
+      <div class="sidebar-toggle">
+        <i class="fas fa-chevron-left"></i>
+      </div>
+    </div>
+    <aside>
+      <div class="left_conatainer">
+        <h2><i class="fa-solid fa-magnifying-glass"></i>Nouveau Sourcing</h2>
+        <div class="linkedin_widgets">
+          <div class="linkedin_sources">
+
+            <div class="creation_liste">
+              <h3>Listes</h3>
+
+            </div>
+            <div class="barre_lateral">
+
+            </div>
+
+            <div class="liste">
+
+            </div>
+
+
+
+            <div class="actions_diplay">
+
+
+            </div>
+            <div class="actions_linkedin">
+              <div class="creation_liste">
+
+              </div>
+
+
+            </div>
+
+          </div>
+          <div class="barre_lateral">
+
+          </div>
+
+
+
+
+
+          <div class="excel">
+
+            <h3><i class="fa-regular fa-file-excel"></i> Sources Excel</h3>
+            <div class="barre_lateral">
+
+            </div>
+            <div class="btns">
+              <button id="download_excel_btn" class="button-65"> <strong>Fichier Excel</strong> </button>
+              <button id="download_csv_btn" class="button-65"> <strong>Fichier CSV</strong> </button>
+
+            </div>
+
+
+            <div id="success-alert">
+              <span class="icon">&#10003;</span>
+              <span class="message">Liste créée avec succès !</span>
+            </div>
+
+            <div id="delete-alert-success">
+              <span class="icon">&#10003;</span>
+              <span class="message">La liste viens d'être Suprimée !</span>
+            </div>
+
+
+
+
+
+          </div>
+        </div>
+      </div>
+    </aside>
+
+
+    <section>
+
+      <!-- MODAL DE RECHERCHE DE PERSONNES SUR LINKEDIN -->
+
+      <div id="myModal" class="modal">
+        <div class="modal-content">
+          <header>
+            <span class="close">&times;</span>
+            <div class="linked_header_modal">
+              <h2>Recherche de personnes</h2>
+            </div>
+          </header>
+          <main>
+            <div class="linked_main_modal">
+              <p>Collez l'URL Linkedin de votre recherche de personnes</p>
+              <form id="form_data">
+                <input name="link" id="input-modal" type="text" placeholder="https://www.linkedin.com/search/results/people/...">
+                <button type="submit" id="modal-btn" class="button-65">Valider</button>
+                <% if (message !== null && message !== '') { %>
+                <p class="error"><%= message %></p>
+                <% } %>
+              </form>
+            </div>
+          </main>
+        </div>
+      </div>
+
+
+      <!-- MODAL DES PERSONNES EN RELATION SUR LINKEDIN -->
+
+
+      <div id="myModalRelation" class="modalRelation">
+        <div class="modal-contentRelation">
+          <header>
+            <span class="closeRelation">&times;</span>
+            <div class="linked_header_modalRelation">
+              <h2>Personnes en relation</h2>
+            </div>
+          </header>
+          <main>
+            <div class="linked_main_modal">
+              <p>Veuillez valider pour lancer le sourcing des profils avec qui vous êtes en relation sur LinkedIn.</p>
+              <button id="modal-btnRelation" class="button-65">Valider</button>
+            </div>
+          </main>
+        </div>
+      </div>
+
+      <!-- MODAL DE PROSPECTS -->
+
+      <div id="myModalprospect" class="modalProspect">
+        <div class="modal-contentProspect">
+          <header>
+            <span class="closeProspect">&times;</span>
+            <div class="linked_header_modal">
+              <h2>Recherche de personnes</h2>
+            </div>
+          </header>
+          <main>
+            hello <div class="name_prospect"></div>
+          </main>
+        </div>
+      </div>
+
+
+      <!-- MODAL VISITEUR DE PROFIL  -->
+
+
+      <div id="myModalVisits" class="modalVisits">
+        <div class="modal-contentVisits">
+          <header>
+            <span class="closeVisits">&times;</span>
+            <div class="linked_header_modalVisits">
+              <h2>Visiteur de mon profil</h2>
+            </div>
+          </header>
+          <main>
+            <div class="linked_main_modal">
+              <p>Veuillez valider pour lancer le sourcing des personnes qui ont visité votre profil LinkedIn.</p>
+              <button id="modal-btnVisits" class="button-65">Valider</button>
+            </div>
+          </main>
+        </div>
+      </div>
+
+      <div id="myModalComments" class="modalComments">
+        <div class="modal-contentComments">
+          <header>
+            <span class="closeComments">&times;</span>
+            <div class="linked_header_modalComments">
+              <h2>Collez l'URL du post LinkedIn</h2>
+              <h3>(post non sponsorisé uniquement)</h3>
+            </div>
+          </header>
+          <main>
+            <div class="linked_main_modal">
+              <input id="input-modal-comments" type="text" placeholder="https://www.linkedin.com/search/results/people/...">
+              <button id="modal-btn-comments" class="button-65">Valider</button>
+            </div>
+          </main>
+        </div>
+      </div>
+
+
+
+      <div class="ModalErreur">
+
+      </div>
+
+      <section>
+
+        <div class="dashCenter">
+
+          <div class="tilte_text">
+            <h2>Prospects</h2>
+          </div>
+
+          <form class="filter-container">
+
+            <input class="recherche" type="text" id="search" name="search" placeholder="Recherche">
+            <button class="btn-recherche" type="submit">Rechercher</button>
+          </form>
+
+          <div class="generated_sources">
+            <div class="display-skeleton-table">
+              <table cellpadding="0" cellspacing="0" width="100%" class="w3samples_table_loader">
+                <tr>
+                  <th class="col1">
+                    <span></span>
+                  </th>
+                  <th class="col4">
+                    <span></span>
+                  </th>
+                  <th class="col5">
+                    <span></span>
+                  </th>
+                </tr>
+                <tr>
+                  <td class="col1">
+                    <span></span>
+                  </td>
+                  <td class="col4">
+                    <span></span>
+                    <span class="sub-temp"></span>
+                    <span class="sub-temp sub-temp-three"></span>
+                  </td>
+                  <td class="col5">
+                    <span></span>
+                  </td>
+                </tr>
+                <tr>
+                  <td class="col1">
+                    <span></span>
+                  </td>
+                  <td class="col4">
+                    <span></span>
+                    <span class="sub-temp"></span>
+                    <span class="sub-temp sub-temp-three"></span>
+                  </td>
+                  <td class="col5">
+                    <span></span>
+                  </td>
+                </tr>
+                <tr>
+                  <td class="col1">
+                    <span></span>
+                  </td>
+                  <td class="col4">
+                    <span></span>
+                    <span class="sub-temp"></span>
+                    <span class="sub-temp sub-temp-three"></span>
+                  </td>
+                  <td class="col5">
+                    <span></span>
+                  </td>
+                </tr>
+                <tr>
+                  <td class="col1">
+                    <span></span>
+                  </td>
+                  <td class="col4">
+                    <span></span>
+                    <span class="sub-temp"></span>
+                    <span class="sub-temp sub-temp-three"></span>
+                  </td>
+                  <td class="col5">
+                    <span></span>
+                  </td>
+                </tr>
+                <tr>
+                  <td class="col1">
+                    <span></span>
+                  </td>
+                  <td class="col4">
+                    <span></span>
+                    <span class="sub-temp"></span>
+                    <span class="sub-temp sub-temp-three"></span>
+                  </td>
+                  <td class="col5">
+                    <span></span>
+                  </td>
+                </tr>
+                <tr>
+                  <td class="col1">
+                    <span></span>
+                  </td>
+                  <td class="col4">
+                    <span></span>
+                    <span class="sub-temp"></span>
+                    <span class="sub-temp sub-temp-three"></span>
+                  </td>
+                  <td class="col5">
+                    <span></span>
+                  </td>
+                </tr>
+                <tr>
+                  <td class="col1">
+                    <span></span>
+                  </td>
+                  <td class="col4">
+                    <span></span>
+                    <span class="sub-temp"></span>
+                    <span class="sub-temp sub-temp-three"></span>
+                  </td>
+                  <td class="col5">
+                    <span></span>
+                  </td>
+                </tr>
+                <tr>
+                  <td class="col1">
+                    <span></span>
+                  </td>
+                  <td class="col4">
+                    <span></span>
+                    <span class="sub-temp"></span>
+                    <span class="sub-temp sub-temp-three"></span>
+                  </td>
+                  <td class="col5">
+                    <span></span>
+                  </td>
+                </tr>
+
+              </table>
+            </div>
+
+            <div class="empty_sources">
+
+              <img src="./assets/Access_icon.ico" alt="logo">
+              <h3>Vous n'avez pas encore généré de sources</h3>
+              <div class="creation_liste">
+
+                <button id="liste_create_btn"><span class="plus">+</span> Créer une liste</button>
+              </div>
+            </div>
+
+
+            <div class="displayed_loader empty_sources">
+              <svg viewBox="25 25 50 50">
+                <circle r="20" cy="50" cx="50"></circle>
+              </svg>
+            </div>
+
+
+
+
+            <div class="container_table">
+              <table>
+                <thead>
+                  <tr class="binder">
+                    <th id="checkbox-th"><input type="checkbox" id="checkbox_all"></th>
+                    <th id="photo_container" data-field="dataPhoto">PHOTO</th>
+                    <th data-field="dataName">NOM</th>
+                    <th data-field="dataProfil">PROFIL</th>
+                    <th data-field="dataVille">VILLE</th>
+                    <th data-field="dataAction">ACTIONS</th>
+                  </tr>
+                </thead>
+                <tbody id="parentProfils">
+
+                </tbody>
+              </table>
+            </div>
+
+
+
+
+          </div>
+
+          <div class="modal">
+            <div class="modal-content">
+              <div class="contain_loader">
+                <span class="loader"></span>
+              </div>
+            </div>
+          </div>
+
+
+
+
+
+        </div>
+      </section>
+
+    </section>
+
+
+    <div class="li_at_display">
+      <div class="modal_li_at">
+        <div class="modal-content_li_at">
+          <span class="modal-close_li_at">&times;</span>
+          <p>Il semble que Le li_at n'est plus Valide ! </p>
+          <p>Vous allez etre redirigé vers la page concernée</p>
+          <div class="modal-buttons_li_at">
+            <button>OK</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+
+
+    <div id="modalForList" class="modalForList">
+      <div class="modal-contentForList">
+        <div class="modal-headerForList">
+
+          <h3>Choisissez une action de prospection</h3>
+
+
+
+
+          <span class="closeForList">&times;</span>
+        </div>
+        <div class="modal-bodyForList">
+          <div class="btns">
+            <button id="searching_persons" class="button-65"> <strong>Recherche de personnes</strong> </button>
+            <button id="get_freinds" class="button-65"> <strong>personnes en relation</strong> </button>
+            <button id="visits" class="button-65"> <strong>Visiteur de mon profil</strong> </button>
+            <button id="comments" class="button-65"> <strong>Commentaire a un post</strong></button>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+
+
+
+  </main>
+  
+  <script src="./js/sourcing.js"></script>
+
+</body>
+
+</html>

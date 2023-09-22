@@ -1,0 +1,30 @@
+<?xml version="1.0" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<!--Generator: Xara Designer (www.xara.com), SVG filter version: 6.6.0.6-->
+<svg fill="none" fill-rule="evenodd" stroke="black" stroke-width="0.501" stroke-linejoin="bevel" stroke-miterlimit="10" font-family="Times New Roman" font-size="16" style="font-variant-ligatures:none" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg" version="1.1" overflow="visible" width="315.899pt" height="143.822pt" viewBox="1385.6 -1463.61 315.899 143.822">
+ <defs>
+  <linearGradient id="LinearGradient" gradientUnits="userSpaceOnUse" x1="0" y1="0" x2="131.7" y2="-264.565" gradientTransform="matrix(-0.723114 -0.690735 0.690735 -0.723114 119.959 -76.951)">
+   <stop offset="0" stop-color="#ffffff"/>
+   <stop offset="1" stop-color="#000000"/>
+  </linearGradient>
+  <style type="text/css">@import url('https://themes.googleusercontent.com/fonts/css?family=Comfortaa:700');
+@import url('https://themes.googleusercontent.com/fonts/css?family=Open Sans:400,600');</style>
+ </defs>
+ <g id="Layer 1" transform="scale(1 -1)">
+  <g id="Group" stroke="none">
+   <mask id="TranspMask">
+    <rect x="-10%" y="-10%" width="120%" height="120%" fill="url(#LinearGradient)" stroke="none"/>
+   </mask>
+   <ellipse rx="71.922" ry="71.922" transform="translate(1457.51 1391.7) rotate(136.312)" fill="#ebf0fc" stroke-width="1.243" stroke-linejoin="miter" mask="url(#TranspMask)"/>
+   <text xml:space="preserve" transform="translate(1544.57 1403.18) scale(1 -1)" kerning="auto" stroke-width="0.947" stroke-linejoin="round" stroke-linecap="round" font-family="Comfortaa" font-weight="bold"><tspan x="0" y="0" font-size="40.595" fill="#b4c348">Access</tspan><tspan x="145.828" y="0" font-size="37.877" fill="#b4c348"> </tspan><tspan x="0" y="48.402" font-size="44.17" fill="#485566">E-lead</tspan></text>
+   <g id="Group_1" stroke-linejoin="miter">
+    <g id="Group_2" fill-rule="nonzero" stroke-width="0.255" fill="#b4c348">
+     <path d="M 1457.51,1437.99 C 1455.29,1437.99 1453.48,1436.18 1453.48,1433.97 C 1453.48,1431.75 1455.29,1429.94 1457.51,1429.94 C 1459.73,1429.94 1461.54,1431.75 1461.54,1433.97 C 1461.54,1436.18 1459.73,1437.99 1457.51,1437.99 Z M 1445.43,1434.75 C 1443.21,1434.75 1441.41,1432.94 1441.41,1430.73 C 1441.41,1428.51 1443.21,1426.7 1445.43,1426.7 C 1447.65,1426.7 1449.46,1428.51 1449.46,1430.73 C 1449.46,1432.94 1447.65,1434.75 1445.43,1434.75 Z M 1469.59,1434.75 C 1467.37,1434.75 1465.56,1432.94 1465.56,1430.73 C 1465.56,1428.51 1467.37,1426.7 1469.59,1426.7 C 1471.8,1426.7 1473.61,1428.51 1473.61,1430.73 C 1473.61,1432.94 1471.8,1434.75 1469.59,1434.75 Z M 1436.6,1425.91 C 1434.38,1425.91 1432.57,1424.11 1432.57,1421.89 C 1432.57,1419.67 1434.38,1417.86 1436.6,1417.86 C 1438.81,1417.86 1440.62,1419.67 1440.62,1421.89 C 1440.62,1424.11 1438.81,1425.91 1436.6,1425.91 Z M 1478.42,1425.91 C 1476.21,1425.91 1474.4,1424.11 1474.4,1421.89 C 1474.4,1419.67 1476.21,1417.86 1478.42,1417.86 C 1480.64,1417.86 1482.45,1419.67 1482.45,1421.89 C 1482.45,1424.11 1480.64,1425.91 1478.42,1425.91 Z M 1457.51,1421.89 C 1450.84,1421.89 1445.43,1416.48 1445.43,1409.81 C 1445.43,1403.14 1450.84,1397.74 1457.51,1397.74 C 1464.18,1397.74 1469.59,1403.14 1469.59,1409.81 C 1469.59,1416.48 1464.18,1421.89 1457.51,1421.89 Z M 1425.3,1405.79 C 1418.63,1405.79 1413.23,1400.38 1413.23,1393.71 C 1413.23,1387.04 1418.63,1381.63 1425.3,1381.63 C 1431.97,1381.63 1437.38,1387.04 1437.38,1393.71 C 1437.38,1400.38 1431.97,1405.79 1425.3,1405.79 Z M 1489.71,1405.79 C 1483.05,1405.79 1477.64,1400.38 1477.64,1393.71 C 1477.64,1387.04 1483.05,1381.63 1489.71,1381.63 C 1496.38,1381.63 1501.79,1387.04 1501.79,1393.71 C 1501.79,1400.38 1496.38,1405.79 1489.71,1405.79 Z M 1453.48,1389.68 C 1446.82,1389.68 1441.41,1384.27 1441.41,1377.61 L 1441.41,1361.5 C 1441.41,1368.17 1436,1373.58 1429.33,1373.58 L 1421.28,1373.58 C 1414.61,1373.58 1409.2,1368.17 1409.2,1361.5 L 1409.2,1345.4 L 1505.82,1345.4 L 1505.82,1361.5 C 1505.82,1368.17 1500.41,1373.58 1493.74,1373.58 L 1485.69,1373.58 C 1479.02,1373.58 1473.61,1368.17 1473.61,1361.5 L 1473.61,1377.61 C 1473.61,1384.27 1468.2,1389.68 1461.54,1389.68 Z" marker-start="none" marker-end="none"/>
+    </g>
+    <ellipse rx="12.202" ry="12.202" transform="translate(1457.45 1409.96) rotate(133.453)" fill="#485566" stroke-width="0.608"/>
+    <ellipse rx="12.202" ry="12.202" transform="translate(1489.81 1393.64) rotate(133.453)" fill="#485566" stroke-width="0.608"/>
+    <ellipse rx="12.202" ry="12.202" transform="translate(1425.19 1393.64) rotate(133.453)" fill="#485566" stroke-width="0.608"/>
+   </g>
+  </g>
+ </g>
+</svg>

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./style/leads.css">
+    <title>Lead</title>
+</head>
+<body>
+
+    <main>
+        <header>
+            <div class="header_lead">
+                <div class="style_header">
+                <h1>Gérer vos leads favoris</h1>
+                <p>Total de Favoris :<span class="nb_leads"> <span class="nb-of-fav">0</span> Favoris </span></p>
+                </div>
+            </div>
+            <div class="lead_fonctionalité_container">
+                <div class="lead_fonctionalité">
+                    
+                    <button class="lancement-campagne"> Inscrire a une campagne </button>
+                    
+                </div>
+                <div class="lead_fonctionalité_gauche">
+                    <button class="btn-delete-all-fav"><i class="fa-solid fa-trash"></i></button>
+                </div>
+                
+                
+            </div>
+        </header>
+
+        <div class="container-fav">
+          
+        </div>
+
+        
+
+        <div id="overlay">
+        <div class="overlay-content">
+            <div class="cross_x_container"><span class="cross-x">&#10006;</span></div>
+            <h2>Nouvelle campagne</h2>
+            <div class="input-btn-container">
+                <input type="text" id="campaignName" placeholder="Nom de la campagne">
+                <button id="launchCampaign">Lancer la campagne</button>
+            </div>
+            
+        </div>
+        </div>
+        
+        <div class="myOverlay" id="myOverlay">
+            <div class="myOverlay-content">
+                <div class="cross_x_containers"><span class="cross-x">&#10006;</span></div>
+                <h2 class="dyna-msg-title">Message title</h2>
+                <p class="dyna-msg">Message</p>
+            
+            </div>
+        </div>
+        
+    </main>
+    <script src="./js/favoris.js"></script>
+</body>
+</html>

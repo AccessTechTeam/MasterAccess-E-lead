@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style/dashbord.css">
+    <link rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"
+      integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ=="
+      crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet">
+    <link rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"
+      integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ=="
+      crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet">
+    <link href="https://unpkg.com/css.gg@2.0.0/icons/css/home.css"
+      rel="stylesheet">
+    <link href="https://unpkg.com/css.gg@2.0.0/icons/css/list.css"
+      rel="stylesheet">
+    <link href="https://unpkg.com/css.gg@2.0.0/icons/css/performance.css"
+      rel="stylesheet">
+    <link href="https://unpkg.com/css.gg@2.0.0/icons/css/user-list.css"
+      rel="stylesheet">
+    <link href="https://unpkg.com/css.gg@2.0.0/icons/css/coffee.css"
+      rel="stylesheet">
+    <link href="https://unpkg.com/css.gg@2.0.0/icons/css/log-off.css"
+      rel="stylesheet">
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.16.9/xlsx.full.min.js"></script>
+      
+      <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+      
+      
+    <title>Dashbord</title>
+  </head>
+
+  <body>
+
+    <div class="sidebar">
+      <div class="sidebar-logo">
+        <img src="./assets/Leads-logo.svg" class="image-mini" alt="Votre logo">
+      </div>
+      <div class="sidebar-icon-container">
+        <a href="dashbord">
+          <i class="gg-performance"></i>
+          <span>Dashboard</span>
+        </a>
+        <a href="Sourcing">
+          <i class="gg-list"></i>
+          <span>Sourcing</span>
+        </a>
+        <a href="leads">
+          <i class="gg-user-list"></i>
+          <span>Favoris</span>
+        </a>
+        <a href="campagne">
+          <i class="gg-coffee"></i>
+          <span>Campagnes</span>
+        </a>
+        <a href="campaign-finished">
+          <img src="./assets/mission.png" class="active-campaign">
+          <span>Campagnes Active</span>
+        </a>
+        <a href="#">
+          <img  class ="miniImageBanner" src="./assets/default_avatar.png" alt="Votre photo de profil">
+          <span>Profil</span>
+        </a>
+        <a href="/Deconnexion">
+          <i class="gg-log-off"></i>
+          <span>Déconnexion</span>
+        </a>
+        
+      </div>
+      <div class="sidebar-toggle">
+        <i class="fas fa-chevron-left"></i>
+      </div>
+    </div>
+
+
+
+    <%- include("./templates/headers.ejs") %>
+      <h1> <span class="userName"></span>, Bienvenue dans le Dashbord
+          d'Access Lead</h1>
+        <main>
+          
+          <div class="ag-format-container ">
+            <div class="ag-courses_box">
+
+              
+
+              <div class="ag-courses_item test">
+                <div class="ag-courses-item_link">
+                  <div class="ag-courses-item_bg"></div>
+
+                  <div class="ag-courses-item_title">
+                    <div class="display-title">
+                      <i class="fa-solid fa-envelope"></i> Email
+                    </div>
+                    <h6> <u> Taux d'emails envoyés : </u> </h6>
+                    <div class="circle">
+                        <p>0%</p>
+                    </div>
+                  </div>
+
+                  
+                </div>
+              </div>
+
+
+
+
+
+
+
+
+
+
+
+
+              <div class="ag-courses_item big-test">
+                <div class="ag-courses-item_link rebigtest">
+                  <div class="ag-courses-item_bg"></div>
+
+                  <div class="ag-courses-item_title">
+                    Votre évolution sur Linkedin
+                    
+                  </div>
+                  <div class="card-chart">
+                    <canvas id="myChart"></canvas>
+                  </div>
+                  
+                 
+                  
+                  
+                  
+                </div>
+              </div>
+              <!-- Include moment.js library -->
+              <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"  crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+              
+
+
+              <script>
+
+                
+
+                
+              </script>
+
+
+
+            
+
+
+
+
+
+              <div class="padding">
+                
+                <div class="ag-courses_item test">
+                  <div class="ag-courses-item_link">
+                    <div class="ag-courses-item_bg"></div>
+  
+                    <div class="ag-courses-item_title">
+                      <div class="display-title">
+                        <i class="fa-solid fa-envelope"></i> Délivré
+                      </div>
+                      <h6> <u> Taux d'emails Délivré : </u> </h6>
+                      <div class="circle">
+                          <p>0%</p>
+                      </div>
+                    </div>
+                    
+  
+                    
+                  </div>
+                </div>
+  
+                
+              </div>
+              
+              <div class="ag-courses_item big-test">
+                <div class="ag-courses-item_link rebigtest">
+                  <div class="ag-courses-item_bg"></div>
+
+                  <div class="ag-courses-item_title">
+                    Mails envoyées
+                  </div>
+
+                  <div class="card-chart">
+                    <canvas id="myChartEmail"></canvas>
+                  </div>
+                  
+                  
+                  
+                  
+                </div>
+              </div>
+
+            </div>
+          </div>
+          <div class="side_information">
+
+            <div class="ag-courses_item retest">
+              <div  class="ag-courses-item_link">
+                <div class="ag-courses-item_bg"></div>
+
+                <div class="ag-courses-item_title">
+                  
+                  <img class="imageMini" src="./assets/default_avatar.png" alt="">
+                  <p>  </p>
+
+                    <div class="variation">
+                      <div class="card_relation">
+                        <p>Relations</p>
+                        <div class="variable_relation">
+                          
+                          <div class="lds-ring"><div></div><div></div><div></div><div></div></div>
+                        </div>
+                      </div>
+                      
+                      <div class="card_enAttente">
+                        <div class="img-container">
+                          <img src="../assets/delete.png" alt="logo-delete">
+                        </div>
+                        
+                        <p>En attente</p>
+                        <div class="variable_enAttente">
+                          <div class="lds-ring"><div></div><div></div><div></div><div></div></div>
+                        </div>
+                      </div>
+                      <div class="card_vu_du_profile">
+                        <p>Vues du profil</p>
+                        <div class="variable_vu_du_profile">
+                          <div class="lds-ring"><div></div><div></div><div></div><div></div></div>
+                        </div>
+                      </div>
+
+                    </div>
+                    <div class="button_displayed">
+                      <button class="btn-li-at">Modifier li_at</button>
+                    </div>
+                  </div>
+
+                  <div>
+
+                  </div>
+
+                  
+                </div>
+              </div>
+
+              <div class="ag-courses_item">
+                <div class="ag-courses-item_link ok">
+                  <div class="ag-courses-item_bg">
+                  </div>
+                  <div class="ag-courses-item_title height">
+                    Statut de prospection
+                  </div>
+                  <div class="campagne">
+                    <div class="campagne_active">
+                      <div class="text_and_icons">
+                        
+                        <p><i class="fa-solid fa-rocket"></i> <span class="number-of-campaign">0</span>  </p>
+                      </div>
+                      <p>Campagnes Actives</p> 
+                      
+                    </div>
+                    
+                  </div>
+                </div>
+              </div>
+
+              
+            </div>
+
+            <div class="li_at_display">
+              <div class="modal_li_at">
+                <div class="modal-content_li_at">
+                  <span class="modal-close_li_at">&times;</span>
+                  <p>Il semble que Le li_at n'est plus Valide !  </p>
+                  <p>Vous allez etre redirigé vers la page concernée</p>
+                  <div class="modal-buttons_li_at">
+                    <button>OK</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+            <div class="delete_display">
+              <div class="modal_delete">
+                <div class="modal-content_delete">
+                  <span class="modal-close_delete">&times;</span>
+                  <p>Sachez que si vous supprimer les invitations en attentes ,
+                    vous ne serrez capable de les réajouté qu'apres 3 semaines </p>
+                  <div class="modal-buttons_delete">
+                    <button class="continue">Je continue</button>
+                    <button class="no">j'ai changé d'avis</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </main>
+
+          <script src="./js/dashbord.js"></script>
+        </body>
+      </html>

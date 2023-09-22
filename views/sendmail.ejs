@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style/send.css">
+    <title>test</title>
+</head>
+<body>
+
+    
+  <form>
+    <label for="to">À :</label>
+    <input type="email" id="to" name="to"><br>
+    
+    <label for="subject">Objet :</label>
+    <input type="text" id="subject" name="subject"><br>
+    
+    <label for="body">Message :</label>
+    <textarea id="body" name="body"></textarea><br>
+    
+    <div class="date-time-picker">
+      <div class="card">
+        <h3>Heure</h3>
+        <div class="time-options">
+          <button type="button" name="time" value="9:00">9:00</button>
+          <button type="button" name="time" value="12:00">12:00</button>
+          <button type="button" name="time" value="15:00">15:00</button>
+          <button type="button" name="time" value="18:00">18:00</button>
+        </div>
+      </div>
+  
+      <div class="card">
+        <h3>Jour</h3>
+        <div class="date-options">
+          <button type="button" name="date" value="today">Aujourd'hui</button>
+          <button type="button" name="date" value="tomorrow">Demain</button>
+          <button type="button" name="date" value="next-week">La semaine prochaine</button>
+        </div>
+      </div>
+    </div>
+  
+    <button type="submit" id="send">Envoyer</button>
+  </form>
+  
+      
+  
+  
+
+
+</body>
+</html>
+
+
+
+  <script>
+    // Récupération des éléments HTML
+    const form = document.querySelector('form');
+    const to = document.querySelector('#to');
+    const subject = document.querySelector('#subject');
+    const body = document.querySelector('#body');
+    const schedule = document.querySelector('#schedule');
+    const sendButton = document.querySelector('#send');
+  
+    // Fonction d'envoi du mail
+    function sendMail() {
+      const mail = {
+        to: to.value,
+        subject: subject.value,
+        body: body.value
+      };
+      console.log('Mail envoyé :', mail);
+    }
+  
+    // Fonction de programmation de l'envoi
+    function scheduleMail() {
+      const now = new Date();
+      const scheduledTime = new Date(schedule.value);
+      if (now < scheduledTime) {
+        const delay = scheduledTime.getTime() - now.getTime();
+        setTimeout(sendMail, delay);
+        console.log('Mail programmé pour le', scheduledTime.toLocaleString());
+      } else {
+        console.log('Erreur : heure de programmation invalide.');
+      }
+    }
+  
+    // Événement de clic sur le bouton d'envoi
+    sendButton.addEventListener('click', function(event) {
+      event.preventDefault();
+      scheduleMail();
+    });
+  </script>
+  
