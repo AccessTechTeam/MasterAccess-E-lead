@@ -1,25 +1,8 @@
 const puppeteer = require("puppeteer");
-
+const { initializeBrowser } = require('./../Helpers/Brwoser');
 
 async function getProfileViewCount(li_at) {
-    const browser = await puppeteer.launch({
-        args: [
-            '--enable-features=NetworkService',
-            '--no-sandbox',
-            '--disable-setuid-sandbox',
-            '--disable-dev-shm-usage',
-            '--disable-web-security',
-            '--disable-features=IsolateOrigins,site-per-process',
-            '--shm-size=3gb',
-        ],
-        ignoreHTTPSErrors: true,
-        headless: true,
-        defaultViewport: {
-            width: 1300,
-            height: 1000
-        },
-        executablePath: "/usr/bin/chromium"
-    });
+    const browser = await initializeBrowser();
     const page = await browser.newPage();
     await page.setCookie({
         name: "li_at",
@@ -30,16 +13,12 @@ async function getProfileViewCount(li_at) {
     await page.goto('https://www.linkedin.com/dashboard/'); // Remplacez "your_profile_url" par l'URL de votre profil LinkedIn
 
     await page.waitForSelector('.app-aware-link.pcd-analytics-view-item__container > .artdeco-card.ember-view.overflow-hidden.full-height > .pcd-analytics-view-item > div > p')
-    const viewCountElement = await page.$$eval('.app-aware-link.pcd-analytics-view-item__container > .artdeco-card.ember-view.overflow-hidden.full-height > .pcd-analytics-view-item > div > p', el => el[4].textContent);
+    const viewCountElement = await page.$('.app-aware-link.pcd-analytics-view-item__container > .artdeco-card.ember-view.overflow-hidden.full-height > .pcd-analytics-view-item > div > p');
     
-    const viewCount = parseInt(viewCountElement.match(/\d+/)[0]);
+    const viewCountText = await page.evaluate(viewCountElement => viewCountElement.textContent, viewCountElement);
+    const viewCount = parseInt(viewCountText.match(/\d+/)[0]);
     await browser.close();
-    return viewCount
-    
+    return viewCount;
 }
 
-
-
-
-
-module.exports = getProfileViewCount 
+module.exports = getProfileViewCount;

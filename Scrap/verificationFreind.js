@@ -1,61 +1,44 @@
-const puppeteer = require ("puppeteer")
+const puppeteer = require("puppeteer");
+require('./../Helpers/Brwoser')
 
+async function CheckFriends(li_at) {
+  const browser = await initializeBrowser();
 
-async function Checkfreinds(li_at){
+  try {
+    const page = await browser.newPage();
 
-    const browser = await puppeteer.launch({
-        args: [
-            '--enable-features=NetworkService',
-            '--no-sandbox',
-            '--disable-setuid-sandbox',
-            '--disable-dev-shm-usage',
-            '--disable-web-security',
-            '--disable-features=IsolateOrigins,site-per-process',
-            '--shm-size=3gb',
-        ],
-        ignoreHTTPSErrors: true,
-        headless: true,
-        defaultViewport: {
-            width: 1300,
-            height: 1000
-        },
-        executablePath: "/usr/bin/chromium"
+    // Définir le cookie de connexion LinkedIn
+    await page.setCookie({
+      name: "li_at",
+      value: li_at,
+      domain: "www.linkedin.com",
     });
 
-    try{
-        let page = await browser.newPage()
+    // Accéder à la page de recherche des amis LinkedIn
+    await page.goto("https://www.linkedin.com/search/results/people/?network=%5B%22F%22%5D", {
+      waitUntil: "networkidle2",
+    });
 
-        await page.setCookie({
-            name: "li_at",
-            value: "AQEDATcJZwoELc8wAAABiICQPfkAAAGIpJzB-U4AVOUQzPkc1jlVP-kauOtiU5aCa8JKF1XHb1olaUosknYBmamKBiWHdQ11_aGzjIshoBqrRW2a_pT548bG6LXRPEqSyWiAI8nwVPXp8suyKH1UhskD",
-            domain: "www.linkedin.com"
-        })
+    // Récupérer le contenu de la page
+    const content = await page.content();
 
-        await page.goto(`https://www.linkedin.com/search/results/people/?network=%5B%22F%22%5D`, {
-            waitUntil: "networkidle2"
-        })
-        
-        const content = await page.content();
+    // Extraire les informations des amis de la page
+    const allFriendsInPage = await page.$$eval('.reusable-search__entity-result-list.list-style-none > li', (elements) => {
+      // Utiliser le contenu HTML des éléments pour extraire les informations souhaitées
+      return elements.map((element) => {
+        return element.innerHTML; // Vous pouvez également récupérer d'autres attributs ou données ici
+      });
+    });
 
-        const allOfFreindsinThePage = await page.$$eval('.reusable-search__entity-result-list.list-style-none > li', (elements) => {
-        // Utilisez le contenu HTML de la page (la variable `content`) pour extraire les éléments souhaités
-        return elements.map((element) => {
-            return element.innerHTML; // Vous pouvez également récupérer d'autres attributs ou données ici
-        });
-});
-
-console.log(allOfFreindsinThePage);
-
-
-    }catch(error){
-        console.log(error)
+    console.log(allFriendsInPage);
+  } catch (error) {
+    console.error("Une erreur s'est produite : ", error);
+  } finally {
+    if (browser) {
+      await browser.close();
     }
-    finally{
-        if(browser){
-            await browser.close()
-        }
-    }
-
+  }
 }
 
-Checkfreinds()
+// Remplacez le cookie li_at avec la valeur correcte
+CheckFriends("VotreCookieLI_AT");

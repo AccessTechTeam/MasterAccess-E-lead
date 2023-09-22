@@ -1,20 +1,18 @@
 const mongoose = require('mongoose');
 
-
+// Définition du schéma pour la collection Mailing
 const MailingSchema = new mongoose.Schema({
-    nameListProspect : { type : mongoose.Schema.Types.ObjectId, ref : 'Campagne' , required : true},
-    prospect : { type : mongoose.Schema.Types.ObjectId, ref : 'Prospect' , required : true},
-    nameCampagne : { type : String, required : true},
-    date : { type : Date, required : false},
-    nb_invitation : { type : Number, required : false},
-    nb_message : { type : Number, required : false},
-    nb_invitation_envoyé : { type : Number, required : false},
-    nb_message_envoyé : { type : Number, required : false},
-    nb_invitation_non_envoyé : { type : Number, required : false},
-    nb_message_non_envoyé : { type : Number, required : false},
+    nameListProspect: { type: mongoose.Schema.Types.ObjectId, ref: 'Campagne', required: true }, // Référence à la collection Campagne
+    prospect: { type: mongoose.Schema.Types.ObjectId, ref: 'Prospect', required: true }, // Référence à la collection Prospect
+    nameCampagne: { type: String, required: true }, // Nom de la campagne
+    date: { type: Date }, // Date de la campagne (peut être facultative)
+    nb_invitation: { type: Number }, // Nombre d'invitations (peut être facultatif)
+    nb_message: { type: Number }, // Nombre de messages (peut être facultatif)
+    nb_invitation_envoyé: { type: Number }, // Nombre d'invitations envoyées (peut être facultatif)
+    nb_message_envoyé: { type: Number }, // Nombre de messages envoyés (peut être facultatif)
+    nb_invitation_non_envoyé: { type: Number }, // Nombre d'invitations non envoyées (peut être facultatif)
+    nb_message_non_envoyé: { type: Number }, // Nombre de messages non envoyés (peut être facultatif)
 });
 
-module.exports = mongoose.model('Campagne_invitation_linkedin', MailingSchema);
-
-
-
+// Export du modèle basé sur le schéma MailingSchema
+module.exports = mongoose.model('Mailing', MailingSchema);

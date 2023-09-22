@@ -1,10 +1,9 @@
 const jwt = require('jsonwebtoken');
-require("dotenv").config()
+require("dotenv").config();
 
+const keySec = process.env.SECRET_KEY;
 
-const keySec = process.env.SECRET_KEY
-
-
+// Middleware d'authentification
 function authMiddleware(req, res, next) {
   const token = req.cookies.access_token;
 
@@ -12,31 +11,23 @@ function authMiddleware(req, res, next) {
     // Si le token n'existe pas, redirigez l'utilisateur vers la page de connexion
     return res.redirect('/connexion');
   }
+
   try {
-    
-    // Vérifiez que le token est valide
+    // Vérifiez que le token est valide en utilisant la clé secrète
     const decodedToken = jwt.verify(token, keySec);
 
     // Ajoutez les informations de l'utilisateur décodé à l'objet de requête
     const userId = decodedToken.userId;
-
-    console.log(userId)
     
-    // Add the user ID to the request object
+    // Ajoutez le ID de l'utilisateur à l'objet de requête
     req.user = { userId };
-
 
     // Passez au middleware suivant
     next();
   } catch (err) {
     // Si le token est invalide, redirigez l'utilisateur vers la page de connexion
-
     return res.redirect('/connexion');
-
-
   }
 }
 
-
-module.exports = authMiddleware
-
+module.exports = authMiddleware;

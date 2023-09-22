@@ -2,34 +2,39 @@ const nodemailer = require('nodemailer');
 const fs = require('fs');
 const path = require('path');
 
-let transport = nodemailer.createTransport({
-  host: "sandbox.smtp.mailtrap.io",
-  port: 2525,
-  auth: {
-    user: "40d71a86d57279",
-    pass: "17ed615adf2409"
-  }
-});
+// Fonction pour envoyer un e-mail
+async function sendEmail(to, subject, htmlContent) {
+  try {
+    const transport = nodemailer.createTransport({
+      host: process.env.MAILTRAP_HOST,
+      port: process.env.MAILTRAP_PORT,
+      auth: {
+        user: process.env.MAILTRAP_USER,
+        pass: process.env.MAILTRAP_PASS,
+      },
+    });
 
+    const message = {
+      from: process.env.MAIL_SENDER,
+      to: to,
+      subject: subject,
+      html: htmlContent,
+    };
+
+    const info = await transport.sendMail(message);
+    console.log('Mail sent successfully', info);
+  } catch (error) {
+    console.error('Failed to send mail', error);
+  }
+}
+
+// Lire le contenu HTML du fichier
 fs.readFile(path.join(__dirname, 'views/template_SMTP/temp1.html'), 'utf8', (err, html) => {
-  if(err){
+  if (err) {
     console.error('Failed to read file', err);
     return;
   }
 
-  const message = {
-    from: 'rayanilyes75@gmail.com',
-    to: 'rayanilyes75@gmail.com',
-    subject: 'test',
-    html: html
-  };
-
-  transport.sendMail(message, (err, info) => {
-    if(err){
-      console.error('Failed to send mail', err);
-      return;
-    }
-    console.log('Mail sent successfully', info);
-  });
-
+  // Appel de la fonction sendEmail
+  sendEmail('rayanilyes75@gmail.com', 'Test', html);
 });
